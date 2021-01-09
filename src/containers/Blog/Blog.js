@@ -13,7 +13,7 @@ class Blog extends Component {
   };
   componentDidMount() {
     axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
-      const posts = response.data.slice(0, 5);
+      const posts = response.data.slice(0, 20);
 
       //Apply some modification to the data returned from server
       const transformData = posts.map((post) => {

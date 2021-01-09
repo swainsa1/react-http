@@ -7,6 +7,7 @@
     margin: 10px;
     box-sizing: border-box;
     cursor: pointer;
+    font-size: 8px;
 }
 
 .Post:hover,
@@ -16,5 +17,6 @@
 
 .Author {
     margin: 16px 0;
-    color: #ccc;
+    color: rgb(5, 173, 234);
+    font-size: 18px;
 }
