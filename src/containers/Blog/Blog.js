@@ -12,7 +12,7 @@ class Blog extends Component {
     selectedId: null,
   };
   componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
+    axios.get("/posts").then((response) => {
       const posts = response.data.slice(0, 20);
 
       //Apply some modification to the data returned from server
@@ -34,6 +34,15 @@ class Blog extends Component {
     console.log("Setting it to state  : "+this.state.selectedId);
   };
 
+  simulateError(){
+    axios.get("https://websitedoesnotexists.typicode.com/posts").then((response) => {
+
+        console.log("Blog.js : error")
+
+    });
+
+  }
+
   render() {
     const posts = this.state.posts.map((post) => {
       return (
@@ -54,6 +63,9 @@ class Blog extends Component {
         </section>
         <section>
           <NewPost />
+        </section>
+        <section className="Posts">
+          <button style={{ textAlign: 'center' }} onClick={()=> this.simulateError()}>Simulate error scenerio </button>
         </section>
       </div>
     );
